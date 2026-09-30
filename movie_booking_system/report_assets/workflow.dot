@@ -1,0 +1,19 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.2, nodesep=0.35, ranksep=0.45]
+  node [shape=box, style="rounded,filled", fillcolor="#eef4ff", color="#4d6fa8", fontname="Arial", fontsize=12]
+  A [label="Start"]
+  B [label="Register / Login"]
+  C [label="Browse Movies"]
+  D [label="Choose Movie & Show"]
+  E [label="View Available Seats"]
+  F [label="Select Seats"]
+  G [label="Seats\navailable?", shape=diamond, fillcolor="#fff8df"]
+  H [label="Create Booking"]
+  I [label="Show Confirmation"]
+  J [label="History / Cancel"]
+  K [label="Logout / End"]
+  A -> B -> C -> D -> E -> F -> G
+  G -> E [label="No"]
+  G -> H [label="Yes"]
+  H -> I -> J -> K
+}

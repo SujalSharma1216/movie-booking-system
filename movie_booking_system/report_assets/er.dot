@@ -1,0 +1,15 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.2]
+  node [shape=record, fontname="Arial", color="#4d6fa8", style="rounded,filled", fillcolor="#eef4ff"]
+  users [label="{USERS|PK id|name|UK email|password_hash|role}"]
+  movies [label="{MOVIES|PK id|title|genre|duration|language|rating|description}"]
+  shows [label="{SHOWS|PK id|FK movie_id|screen|show_date|show_time|price}"]
+  seats [label="{SEATS|PK id|screen|seat_number|UK screen + seat_number}"]
+  bookings [label="{BOOKINGS|PK id|FK user_id|FK show_id|total_amount|booked_at|status}"]
+  bs [label="{BOOKING_SEATS|PK/FK booking_id|PK/FK seat_id}"]
+  users -> bookings [label="has"]
+  movies -> shows [label="has"]
+  shows -> bookings [label="receives"]
+  bookings -> bs [label="contains"]
+  seats -> bs [label="assigned"]
+}

@@ -1,0 +1,16 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.2]
+  node [shape=record, fontname="Arial", color="#4d6fa8", style="rounded,filled", fillcolor="#eef4ff"]
+  User [label="{User|id|name|email|role}"]
+  Movie [label="{Movie|id|title|genre|duration|language|rating}"]
+  Show [label="{Show|id|movie_id|screen|show_date|show_time|price}"]
+  Booking [label="{Booking|id|user_id|show_id|total_amount|status}"]
+  Auth [label="{Auth Service|register_user()|login_user()}"]
+  MS [label="{Movie Service|list_movies()|add_movie()|update_movie()|delete_movie()|add_show()}"]
+  BS [label="{Booking Service|get_available_seats()|create_booking()|cancel_booking()}"]
+  RS [label="{Report Service|booking_summary()|top_movies()}"]
+  User -> Booking [label="1..*"]
+  Movie -> Show [label="1..*"]
+  Show -> Booking [label="1..*"]
+  Auth -> User; MS -> Movie; MS -> Show; BS -> Booking; RS -> Booking
+}

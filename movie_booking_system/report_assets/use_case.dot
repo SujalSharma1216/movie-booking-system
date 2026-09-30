@@ -1,0 +1,20 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.2]
+  node [fontname="Arial"]
+  edge [color="#555555"]
+  customer [label="Customer", shape=box, style="rounded,filled", fillcolor="#eef4ff"]
+  admin [label="Admin", shape=box, style="rounded,filled", fillcolor="#eef4ff"]
+  system [label="Movie Booking System", shape=box, style="rounded", color="#888888"]
+  r1 [label="Register / Login", shape=ellipse]
+  r2 [label="Browse / Search Movies", shape=ellipse]
+  r3 [label="Book Tickets", shape=ellipse]
+  r4 [label="View History", shape=ellipse]
+  r5 [label="Cancel Booking", shape=ellipse]
+  r6 [label="Add / Update / Delete Movie", shape=ellipse]
+  r7 [label="Add Show", shape=ellipse]
+  r8 [label="View Booking Report", shape=ellipse]
+  customer -> r1; customer -> r2; customer -> r3; customer -> r4; customer -> r5
+  admin -> r1; admin -> r2; admin -> r6; admin -> r7; admin -> r8
+  r1 -> system [style=dashed]; r2 -> system [style=dashed]; r3 -> system [style=dashed]; r4 -> system [style=dashed]; r5 -> system [style=dashed]
+  r6 -> system [style=dashed]; r7 -> system [style=dashed]; r8 -> system [style=dashed]
+}

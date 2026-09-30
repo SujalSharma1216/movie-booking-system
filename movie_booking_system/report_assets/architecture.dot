@@ -1,0 +1,24 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.2]
+  node [shape=box, style="rounded,filled", fillcolor="#eef4ff", color="#4d6fa8", fontname="Arial"]
+  U [label="Customer / Admin"]
+  CLI [label="CLI Interface\ncli.py"]
+  AUTH [label="Authentication\nauth.py"]
+  MOV [label="Movie & Show\nmovie_service.py"]
+  BOOK [label="Booking\nbooking_service.py"]
+  REP [label="Reports\nreports.py"]
+  VAL [label="Validation\nvalidators.py"]
+  DB [label="SQLite Database\ndatabase.py", shape=cylinder, fillcolor="#f3f3f3"]
+  LOG [label="Log File", shape=note, fillcolor="#fff8df"]
+  U -> CLI
+  CLI -> AUTH
+  CLI -> MOV
+  CLI -> BOOK
+  CLI -> REP
+  CLI -> VAL
+  AUTH -> DB
+  MOV -> DB
+  BOOK -> DB
+  REP -> DB
+  CLI -> LOG
+}
